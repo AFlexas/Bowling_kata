@@ -1,27 +1,32 @@
 class Bowling:
-    strike = 'X'
+    def __init__(self, score):
+        self.score = list(score)
     
-    spare = '/'
-
-    # def __init__(self, score):
-    #     if score != int:
-    #         raise ValueError ("Score not valid")
-    #     else:
-    #         True
-
-    @staticmethod
-    def open_frame(*score):
-        for numbers in score:
-            if numbers < 10:
-                return sum(score)
-    @staticmethod
-    def score_strike(*score):
+    def it_is_strike(self):
+        # strikev2 = []
+        # sparev2 = []
+        # nullv2 = []
+        strike = ["X"]
+        spare = ["/"]
+        null = ["-"]
         contador = 0
-        for numbers in score:
-            if numbers == 'X':
-                contador == contador + 10 + [score+1] + [score + 2]
-                return contador 
+        for number in self.score:
+            if number in strike:
+                contador = contador + 10 + [self.score + 1] + [self.score + 2]
+            else:
+                pass
+            if number in spare:
+                contador = contador + 10 + [self.score + 1]
+            else:
+                pass
+            if number in null:
+                contador = contador + 0
+            else:
+                pass
+            if int(number) < 10:
+                contador = contador + number.isdigit()
+        return contador
 
+    
 
-
-
+    
